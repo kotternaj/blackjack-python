@@ -13,3 +13,18 @@ def deal(deck):
         if card == 12: card = 'A'
         hand.append(card)
     return hand
+
+def play_again():
+
+def total(hand):
+
+def hit(hand):
+
+def show_results():
+
+def blackjack(dealers_hand, players_hand):
+
+def score(dealers_hand, players_hand):
+
+def game():
+
