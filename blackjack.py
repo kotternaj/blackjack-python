@@ -7,4 +7,9 @@ def deal(deck):
     for i in range(2):
         random.shuffl(deck)
         card = deck.pop()
-        if  
+        if card == 11: card = 'J'
+        if card == 12: card = 'Q'
+        if card == 12: card = 'K'
+        if card == 12: card = 'A'
+        hand.append(card)
+    return hand
