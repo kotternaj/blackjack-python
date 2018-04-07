@@ -1,4 +1,5 @@
 import random
+import os
 
 deck = [2,3,4,5,6,7,8,9,10,11,12,13,14]*4
 
@@ -19,6 +20,12 @@ def play_again():
 def total(hand):
 
 def hit(hand):
+
+def clear():
+    if os.name == 'nt':
+        os.system('CLS')            
+    if os.name == 'posix':
+        os.system('clear')
 
 def show_results():
 
