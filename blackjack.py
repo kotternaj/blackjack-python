@@ -16,6 +16,15 @@ def deal(deck):
     return hand
 
 def play_again():
+    answer = raw_input('Do you want to play again? y/n: ')
+    if answer == 'y':
+        dealers_hand = []
+        players_hand = []
+        deck = [2,3,4,5,6,7,8,9,10,11,12,13,14]*4
+        game()
+    else:
+        print 'Bye!'
+        exit()
 
 def total(hand):
 
