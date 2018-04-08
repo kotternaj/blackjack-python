@@ -45,9 +45,20 @@ def clear():
     if os.name == 'posix':
         os.system('clear')
 
-# def show_results():
+def show_results(players_hand, dealers_hand):
+    clear()
+    print 'You have %s for a total of %s ' %(players_hand, total(players_hand))
+    print 'The dealer has %s for a total of %s' %(dealers_hand, total(dealers_hand))
 
-# def blackjack(dealers_hand, players_hand):
+def blackjack(dealers_hand, players_hand):
+    if total(players_hand) == 21:
+        show_results(dealers_hand, players_hand)
+        print 'congratulations you got BlackJack!'
+        play_again
+    elif total(dealers_hand) == 21:
+        show_results(dealers_hand, players_hand)
+        print 'the dealer got BlackJack!'
+        play_again
 
 # def score(dealers_hand, players_hand):
 
@@ -67,13 +78,13 @@ def game():
             hit(players_hand)
             while total(dealers_hand < 17):
                 hit(dealers_hand)
-                score(dealers_hand, players_hand)
-                play_again()
+            score(dealers_hand, players_hand)
+            play_again()
         elif choice == 's':
             while total(dealers_hand < 17):
                 hit(dealers_hand)
-                score(dealers_hand, players_hand)
-                play_again()
+            score(dealers_hand, players_hand)
+            play_again()
         elif choice == 'q':
             print 'Bye!'
             quit()
