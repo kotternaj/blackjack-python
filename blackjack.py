@@ -67,8 +67,26 @@ def blackjack(dealers_hand, players_hand):
         print 'the dealer got BlackJack!'
         play_again
 
-# def score(dealers_hand, players_hand):
-
+def score(dealers_hand, players_hand):
+    if total(players_hand) == 21:
+        show_results(dealers_hand, players_hand)
+        print 'congratulations you got BlackJack!'
+    elif total(dealers_hand) == 21:
+        show_results(dealers_hand, players_hand)
+        print 'the dealer got BlackJack!'
+    elif total(players_hand) > 21:
+        show_results(dealers_hand, players_hand)
+        print 'You busted!'
+    elif total(dealers_hand) > 21:
+        show_results(dealers_hand, players_hand)
+        print 'the dealer busted!'  
+    elif total(players_hand > dealers_hand):
+        show_results(dealers_hand, players_hand)
+        print 'You got higher than the dealer! You win!'
+    elif total(dealers_hand < players_hand):
+        show_results(dealers_hand, players_hand)
+        print 'The dealer got higher, he wins!'
+        
 def game():
     choice = 0
     clear()
