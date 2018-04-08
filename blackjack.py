@@ -31,9 +31,8 @@ def total(hand):
     for card in hand:
         if card == 'J' or card == 'K' or card == 'Q':
             total += 10
-        elif:
-            if card == 'A':
-                if total >= 11 : total += 1
+        elif card == 'A':
+            if total >= 11 : total += 1
             else: total += 11
         else: total += card
     return total
@@ -53,13 +52,31 @@ def clear():
 # def score(dealers_hand, players_hand):
 
 def game():
-    print "Welcome to Python Blackjack"
+    choice = 0
+    clear()
+    print "Welcome to Python Blackjack /n"
     players_hand = deal(deck)
     dealers_hand = deal(deck)
-    
-    print 'Players Hand: %s    Dealers Hand: %s' %(players_hand, dealers_hand)  
- 
-
+    while choice != 'q':
+        print 'The dealer is showing a %s' %dealers_hand[0]
+        print 'You have a %s for a total of %s' %(players_hand, total(players_hand))
+        blackjack(players_hand,dealers_hand)
+        choice = raw_input('Do you want to [H]it, [S]tand or [Q]uit?: ').lower()
+        clear()
+        if choice == 'h':
+            hit(players_hand)
+            while total(dealers_hand < 17):
+                hit(dealers_hand)
+                score(dealers_hand, players_hand)
+                play_again()
+        elif choice == 's':
+            while total(dealers_hand < 17):
+                hit(dealers_hand)
+                score(dealers_hand, players_hand)
+                play_again()
+        elif choice == 'q':
+            print 'Bye!'
+            quit()
 
 if __name__ == "__main__":
    game()
